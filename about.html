@@ -47,6 +47,16 @@
             0% { background: #0a0a0a; }
             100% { background: #222222; }
         }
+        @keyframes fadeSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         .about-box {
             padding: 30px;
             border-radius: 20px;
@@ -54,7 +64,7 @@
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
-            animation: fadeIn 2s ease-in-out;
+            animation: fadeSlideIn 1.5s ease-out;
             max-width: 90%;
         }
         .glow-text {
@@ -76,7 +86,6 @@
         .content {
             font-size: 1.1rem;
             margin-bottom: 20px;
-            animation: slideUp 1.5s ease-in-out;
         }
         .features {
             display: flex;
@@ -109,6 +118,11 @@
             border-radius: 10px;
             transition: 0.3s;
         }
+        .extra-button {
+    position: relative;
+    left: -30px; /* Μπορείς να αλλάξεις την τιμή αν το θέλεις πιο αριστερά */
+}
+
         .back-button:hover, .extra-button:hover {
             background: #ffaa00;
             transform: scale(1.1);
