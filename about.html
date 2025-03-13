@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About NEXIS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="about-box">
+            <header>
+                <h1 class="glow-text">About NEXIS</h1>
+                <p class="tagline">The Future of AI Innovation</p>
+            </header>
+            <section class="content">
+                <p>NEXIS is a groundbreaking AI project designed to push the boundaries of technology and human interaction. With cutting-edge algorithms and seamless integration, it redefines the way we interact with artificial intelligence.</p>
+            </section>
+            <div class="features">
+                <div class="feature-card">🚀 High Performance</div>
+                <div class="feature-card">🧠 Smart Learning</div>
+                <div class="feature-card">🔒 Secure & Reliable</div>
+            </div>
+            <a href="index.html" class="back-button">Back to Home</a>
+        </div>
+        <a href="https://georgegamer1205201.wixstudio.com/greek-games-studios" class="extra-button" target="_blank">Visit Greek Games Studios</a>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            animation: bgAnimation 10s infinite alternate ease-in-out;
+            flex-direction: column;
+        }
+        @keyframes bgAnimation {
+            0% { background: #0a0a0a; }
+            100% { background: #222222; }
+        }
+        .about-box {
+            padding: 30px;
+            border-radius: 20px;
+            border: 3px solid #ffcc00;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+        .glow-text {
+            font-size: 2.5rem;
+            color: #ffcc00;
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+            animation: flicker 2s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: #ffaa00;
+            margin-bottom: 20px;
+        }
+        .content {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            animation: slideUp 1.5s ease-in-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .feature-card {
+            padding: 15px 20px;
+            background: #ffcc00;
+            color: #000;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 204, 0, 0.5);
+            transition: 0.3s;
+        }
+        .feature-card:hover {
+            transform: scale(1.1);
+            background: #ffaa00;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ffcc00;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .back-button:hover {
+            background: #ffaa00;
+            transform: scale(1.1);
+        }
+        .extra-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ffcc00;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .extra-button:hover {
+            background: #ffaa00;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</body>
+</html>
