@@ -2,16 +2,16 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const { OpenAI } = require("openai");
-require("dotenv").config();
+require("dotenv").config(); // φόρτωση .env μεταβλητών
 
-const app = express();
+const app = express(); // <== Αυτό έλειπε
 const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // ⚠️ Βεβαιώσου ότι έχεις .env αρχείο
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 app.post("/chat", async (req, res) => {
