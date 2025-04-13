@@ -1,22 +1,36 @@
-const express = require('express');
-const cors = require('cors');
-const axios = require('axios');
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const GPT = require("gpt-free");
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+const port = process.env.PORT || 3000;
 
-app.post('/chat', async (req, res) => {
+app.use(cors());
+app.use(bodyParser.json());
+
+app.post("/chat", async (req, res) => {
   const prompt = req.body.prompt;
+  if (!prompt) {
+    return res.status(400).json({ error: "No prompt provided" });
+  }
+
   try {
-    const response = await axios.post('https://churchless.tech/api/gpt', { prompt });
-    res.json({ reply: response.data });
+    const reply = await GPT.chat(prompt, {
+      model: "gpt-3.5-turbo", // μπορείς να το αλλάξεις σε "gpt-4" αν θες
+    });
+
+    res.json({ reply });
   } catch (error) {
-    res.status(500).json({ reply: 'Σφάλμα κατά την επικοινωνία με το AI.' });
+    console.error("AI Error:", error);
+    res.status(500).json({ reply: "⚠️ Error generating response." });
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.get("/", (req, res) => {
+  res.send("✅ NEXIS GPT-Free server is running.");
+});
+
+app.listen(port, () => {
+  console.log(`🚀 Server running on port ${port}`);
 });
